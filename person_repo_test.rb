@@ -5,8 +5,8 @@ require "../lab_2/person_repository"
 class PersonRepositoryTest < Test::Unit::TestCase
   def setup
     @repository = PersonRepository.new
-    @person1 = Person.new("Владислав", "Чолак", "AA0123456789", "2000-01-01")
-    @person2 = Person.new("Юлія", "Чолак", "AZ0123456789", "1985-05-05")
+    @person1 = Person.new("Олександр", "Волощук", "AA0123456789", "2000-01-01")
+    @person2 = Person.new("Юлія", "Волощук", "AZ0123456789", "1985-05-05")
     @repository.add_person(@person1)
     @repository.add_person(@person2)
   end
@@ -19,7 +19,7 @@ class PersonRepositoryTest < Test::Unit::TestCase
   end
 
   def add_existing_person
-    @person1 = Person.new("Владислав", "Чолак", "AA0123456789", "2000-01-01")
+    @person1 = Person.new("Олександр", "Волощук", "AA0123456789", "2000-01-01")
     assert_raise(PersonAlreadyExist) { @repository.add_person(duplicate_person) }
   end
 
